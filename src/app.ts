@@ -42,25 +42,25 @@ export class App {
         .setZoom(1, false)
     // fps
     this.application.stage.addChild(new PixiFps())
-    // area
-    const area = new Graphics();
-    area.beginFill(0xFFFF00);
-    area.lineStyle(2, 0xFF0000, 0);
-    area.drawRect(0, 0, 600, 600);
-
     // grid
     const grid = new Graphics();
     grid.lineStyle(1, 0xffffff, 1);
     grid.drawRect(0, 0, 49, 49)
-    viewport.addChild(grid);
+    // area
+    const area = new Graphics();
+    area.beginFill(0xFFFF00);
+    area.lineStyle(2, 0xFF0000, 0);
+    area.drawRect(0, 0, 300, 300);
     const tilingSprite = new TilingSprite(this.application
         .renderer.generateTexture(grid, SCALE_MODES.LINEAR, 2), area.width, area.height);
     area.addChild(tilingSprite)
 
 
     // center
-    const center = new Graphics().lineStyle(1, 0xff0000)
-            .drawRect(0, 0, 10, 10).endFill();
+    const center = new Graphics()
+    center.lineStyle(1, 0xff0000)
+    center.drawRect(0, 0, 10, 10)
+    center.endFill();
     center.position.x = (area.width - center.width) / 2
     center.position.y = (area.height - center.height) / 2
     area.addChild(
