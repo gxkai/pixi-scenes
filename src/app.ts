@@ -49,7 +49,7 @@ export class App {
     // area
     const area = new Graphics();
     area.beginFill(0xFFFF00);
-    area.lineStyle(2, 0xFF0000, 0);
+    area.lineStyle(0.1, 0xFF0000, 0);
     area.drawRect(0, 0, 300, 300);
     const tilingSprite = new TilingSprite(this.application
         .renderer.generateTexture(grid, SCALE_MODES.LINEAR, 2), area.width, area.height);
